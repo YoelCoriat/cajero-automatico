@@ -8,18 +8,18 @@ Usar condicionales if, elif, else para manejar las opciones.
 
 Practicar variables acumulativas y entrada de datos.
 
-Cocnsideraciones:
-Agregar un sistema de PIN: antes de acceder al menú, el usuario debe ingresar una contraseña correcta
+Consideraciones:
+- Agregar un sistema de PIN: antes de acceder al menú, el usuario debe ingresar una contraseña correcta
 
-Registrar movimientos: guardar una lista con los depósitos y retiros realizados.
+- Registrar movimientos: guardar una lista con los depósitos y retiros realizados.
 
-Opción de “ver historial”: mostrar los movimientos registrados.
+- Opción de “ver historial”: mostrar los movimientos registrados.
 
-Múltiples usuarios: permitir que varios usuarios (con diferentes PIN) usen el cajero.
+- Múltiples usuarios: permitir que varios usuarios (con diferentes PIN) usen el cajero.
 
 Desarrollado por: Grupo C
-Yoel Coriat
+- Yoel Coriat
 
-Maryane Holt
+- Maryane Holt
 
-Jose De Gracia
+- Jose De Gracia
