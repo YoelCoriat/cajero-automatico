@@ -100,6 +100,9 @@ while run:
                         print(f"Depositado {movimiento}$")
                     else:
                         print(f"Retirado {-movimiento}$")
+                print(f"\nSaldo: {usuario_actual.saldo}$")
+
+
 
         elif opcion == 5:
             logged_in = False
