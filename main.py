@@ -74,22 +74,21 @@ while run:
         print("4. Salir o cambiar usuario")
         opcion = input_int("Ingrese su opcion: ")
 
-        match opcion:
-            case 1:
-                print(f"\nSaldo: {usuario_actual.saldo}$")
+        if opcion == 1:
+            print(f"\nSaldo: {usuario_actual.saldo}$")
 
-            case 2:
-                deposito = input_float(f"Cuanto dinero desea depositar? ")
-                usuario_actual.depositar(deposito)
-                print(f"\nDepositado {deposito}$")
+        elif opcion == 2:
+            deposito = input_float("Cuanto dinero desea depositar? ")
+            usuario_actual.depositar(deposito)
+            print(f"\nDepositado {deposito}$")
 
-            case 3:
-                retiro = input_float(f"Cuanto dinero desea retirar? ")
-                usuario_actual.retirar(retiro)
-                print(f"\nRetirado {retiro}$")
+        elif opcion == 3:
+            retiro = input_float("Cuanto dinero desea retirar? ")
+            usuario_actual.retirar(retiro)
+            print(f"\nRetirado {retiro}$")
 
-            case 4:
-                logged_in = False
+        elif opcion == 4:
+            logged_in = False
 
-            case _:
-                print("\nOpcion invalida")
+        else:
+            print("\nOpcion invalida")
