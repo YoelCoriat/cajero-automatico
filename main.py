@@ -76,6 +76,8 @@ while run:
 
         if opcion == 1:
             print(f"\nSaldo: {usuario_actual.saldo}$")
+            if usuario_actual.saldo < 0:
+                print("Credito negativo! Deposite dinero pronto para que no se le cancele la cuenta.")
 
         elif opcion == 2:
             deposito = input_float("Cuanto dinero desea depositar? ")
