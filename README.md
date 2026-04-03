@@ -23,3 +23,6 @@ Desarrollado por: Grupo C
 - Maryane Holt
 
 - Jose De Gracia
+
+
+(Para el proposito de simplicidad, los pines no estan encriptados)
