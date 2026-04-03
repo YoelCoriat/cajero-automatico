@@ -1,5 +1,7 @@
 from usuario import Usuario
 
+# Todas las funciones de "input" son un bucle que toman condiciones necesarias para input del usuario.
+# Es más facil definir una funcion al inicio del programa ya que este código se reutiliza bastante.
 def input_float(mensaje):
     while True:
         valor = input(mensaje)
@@ -30,18 +32,23 @@ def input_pin(mensaje):
         try:
             numero = int(valor)
             if numero >= 0:
-                return numero
+                return valor
+                # No se regresa numero ya que se necesita el pin en str.
+
             else:
-                print("Por favor ingresar un pin positivo")
+                print("Por favor ingresar un numero positivo")
         except ValueError:
             return -1
 
+# Si se desea añadir un usuario, seguir este formato.
+# Los pines se cambiaron a strings ya que un pin '0001' seria en realidad solamente '1' si fuera un int.
 usuarios = [
-    Usuario("Yoel Coriat", 2602),
-    Usuario("Maryane Holt", 4954),
-    Usuario("Jose De Gracia", 1819)
+    Usuario("Yoel Coriat", '2602'),
+    Usuario("Maryane Holt", '4954'),
+    Usuario("Jose De Gracia", '1819')
 ]
-usuario_actual = Usuario("", 0000)
+
+usuario_actual = Usuario("", '0000')
 
 run = True
 logged_in = False
@@ -100,9 +107,8 @@ while run:
                         print(f"Depositado {movimiento}$")
                     else:
                         print(f"Retirado {-movimiento}$")
+                        #-movimiento en este caso, ya que los retiros se guardan como numeros negativos en la clase Usuario
                 print(f"\nSaldo: {usuario_actual.saldo}$")
-
-
 
         elif opcion == 5:
             logged_in = False
