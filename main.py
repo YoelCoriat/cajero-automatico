@@ -5,7 +5,7 @@ def input_float(mensaje):
         valor = input(mensaje)
         try:
             numero = float(valor)
-            if numero >= 0:
+            if numero > 0:
                 return numero
             else:
                 print("Por favor ingresar un numero positivo o no cero")
