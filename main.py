@@ -8,7 +8,7 @@ def input_float(mensaje):
             if numero >= 0:
                 return numero
             else:
-                print("Por favor ingresar un numero positivo")
+                print("Por favor ingresar un numero positivo o no cero")
         except ValueError:
             print("Por favor ingresar un numero valido")
 
@@ -71,7 +71,8 @@ while run:
         print("1. Consultar saldo")
         print("2. Depositar dinero")
         print("3. Retirar dinero")
-        print("4. Salir o cambiar usuario")
+        print("4. Mostrar movimientos")
+        print("5. Salir o cambiar usuario")
         opcion = input_int("Ingrese su opcion: ")
 
         if opcion == 1:
@@ -90,6 +91,17 @@ while run:
             print(f"\nRetirado {retiro}$")
 
         elif opcion == 4:
+            if not usuario_actual.movimientos:
+                print("\nNo han habido movimientos.")
+            else:
+                print(f"\nMovimientos:")
+                for movimiento in usuario_actual.movimientos:
+                    if movimiento > 0:
+                        print(f"Depositado {movimiento}$")
+                    else:
+                        print(f"Retirado {-movimiento}$")
+
+        elif opcion == 5:
             logged_in = False
 
         else:
