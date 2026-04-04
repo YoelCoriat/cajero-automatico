@@ -81,11 +81,10 @@ while run:
         print("4. Mostrar movimientos")
         print("5. Salir o cambiar usuario")
         opcion = input_int("Ingrese su opcion: ")
-
+       
+        #  Al hacer el cambio en la opcion 3 , la opcion 1 se simplifica ya que no se reflejara mensaje con saldo negativo 
         if opcion == 1:
-            print(f"\nSaldo: {usuario_actual.saldo}$")
-            if usuario_actual.saldo < 0:
-                print("Credito negativo! Deposite dinero pronto para que no se le cancele la cuenta.")
+            print(f"\nSu saldo actual es: {usuario_actual.saldo}$")
 
         elif opcion == 2:
             deposito = input_float("Cuanto dinero desea depositar? ")
@@ -94,8 +93,13 @@ while run:
 
         elif opcion == 3:
             retiro = input_float("Cuanto dinero desea retirar? ")
-            usuario_actual.retirar(retiro)
-            print(f"\nRetirado {retiro}$")
+            #  Se cambia la validacion de saldo suficiente para evitar numeros negativos en la cuenta
+            if retiro <= usuario_actual.saldo:
+                usuario_actual.retirar(retiro)
+                print(f"\nRetirado {retiro}$")
+                print(f"Saldo restante: {usuario_actual.saldo}$")
+            else:
+                print(f"\n[ERROR] Saldo insuficiente. Tu saldo actual es de {usuario_actual.saldo}$")
 
         elif opcion == 4:
             if not usuario_actual.movimientos:
