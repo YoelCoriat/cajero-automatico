@@ -115,6 +115,7 @@ while run:
                 print(f"\nSaldo: {usuario_actual.saldo}$")
 
         elif opcion == 5:
+            print(f"\nSesion cerrada para {usuario_actual.usuario}.")
             logged_in = False
 
         else:
